@@ -14,4 +14,6 @@ LABEL org.label-schema.schema-version="1.0" \
       org.label-schema.dockerfile="/Dockerfile"
 RUN set -x; \
     apk add --no-cache postfix
-ENTRYPOINT ["/usr/sbin/postfix", "start-fg"]
+COPY docker-entrypoint.sh /
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["/usr/sbin/postfix", "start-fg"]
