@@ -13,7 +13,7 @@ LABEL org.label-schema.schema-version="1.0" \
       org.label-schema.build-date="$BUILD_DATE" \
       org.label-schema.dockerfile="/Dockerfile"
 RUN set -x; \
-    apk add --no-cache postfix
+    apk add --no-cache postfix postfix-mysql postgrey
 COPY docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["/usr/sbin/postfix", "start-fg"]
