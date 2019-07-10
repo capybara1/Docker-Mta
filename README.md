@@ -16,5 +16,6 @@ Container that provides a Postfix instance
 docker run \
   -d \
   --name mta \
+  -v "/etc/postfix:/etc/postfix" \
   "capybara1/mta:1.0"
 ```
